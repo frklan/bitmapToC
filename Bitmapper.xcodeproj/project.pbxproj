@@ -340,6 +340,7 @@
 				DEVELOPMENT_TEAM = YYQAE9M783;
 				INFOPLIST_FILE = Bitmapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.frklan.Bitmapper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
@@ -355,6 +356,7 @@
 				DEVELOPMENT_TEAM = YYQAE9M783;
 				INFOPLIST_FILE = Bitmapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.frklan.Bitmapper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
