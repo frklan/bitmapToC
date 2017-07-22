@@ -95,7 +95,8 @@ class ViewController: NSViewController, DropZoneDelegate {
             if bitsPerItem == 0 { return }
             
             // output string
-            var output = "// width: \(width) height: \(height)\nPROGMEM const unsigned char YOUR_NAME[] = {\n\(width), \(height),"
+            //var output = "// width: \(width) height: \(height)\nPROGMEM const unsigned char YOUR_NAME[] = {\n\(width), \(height),"
+            var output = "// width: \(width) height: \(height)\nPROGMEM const unsigned char YOUR_NAME[] = {"
             
             // y loop
             for row in 0 ..< height {
