@@ -11,19 +11,19 @@ import Cocoa
 @objc protocol DropZoneDelegate: NSObjectProtocol, NSDraggingDestination {
     
     /// Redirect of the draggingEntered function (optional)
-    optional func draggingEntered(info: NSDraggingInfo) -> NSDragOperation
+    @objc optional func draggingEntered(_ info: NSDraggingInfo) -> NSDragOperation
     
     /// Redirect of the draggingUpdated function (optional)
-    optional func draggingUpdated(info: NSDraggingInfo) -> NSDragOperation
+    @objc optional func draggingUpdated(_ info: NSDraggingInfo) -> NSDragOperation
     
     /// Redirect of the draggingExited function (optional)
-    optional func draggingExited(info: NSDraggingInfo)
+    @objc optional func draggingExited(_ info: NSDraggingInfo)
     
     /// Redirect of the prepareForDragOperation (optional)
-    optional func prepareForDragOperation(info: NSDraggingInfo) -> Bool
+    @objc optional func prepareForDragOperation(_ info: NSDraggingInfo) -> Bool
     
     /// Redirect of the performDragOperations (required)
-    func performDragOperation(info: NSDraggingInfo) -> Bool
+    func performDragOperation(_ info: NSDraggingInfo) -> Bool
     
 }
 
@@ -37,13 +37,13 @@ class DropZoneView: NSView {
     var acceptedFiles: [String] = []
     
     /// The dragOperation that will de returned if an optoinal DropZoneDelegate function has not been implemented
-    var defaultDragOperation = NSDragOperation.Copy
+    var defaultDragOperation = NSDragOperation.copy
     
     
 //MARK: - Functions
     
     /// A helper function, to make it easier to register for specific file types. The array should look like ["mp3", "aac", "psd"] etc.
-    func registerForFileExtensions(extensions: [String]) {
+    func registerForFileExtensions(_ extensions: [String]) {
         
         var types: [String] = []
         
@@ -51,24 +51,24 @@ class DropZoneView: NSView {
             types.append("NSTypedFilenamesPboardType:\(ext)")
         }
         
-        registerForDraggedTypes([NSFilenamesPboardType])
+        register(forDraggedTypes: [NSFilenamesPboardType])
         acceptedFiles = extensions
         
     }
     
     /// Returns the file urls from the given DraggingInfo
-    class func fileUrlsFromDraggingInfo(info: NSDraggingInfo) -> [NSURL]? {
+    class func fileUrlsFromDraggingInfo(_ info: NSDraggingInfo) -> [URL]? {
         
         let pboard = info.draggingPasteboard()
         
-        if (pboard.types! as NSArray).containsObject(NSURLPboardType) {
+        if (pboard.types! as NSArray).contains(NSURLPboardType) {
             
-            var urls = pboard.readObjectsForClasses([NSURL.self], options: nil) as? [NSURL]
-            var realUrls = [NSURL]()
+            let urls = pboard.readObjects(forClasses: [NSURL.self], options: nil) as? [NSURL]
+            var realUrls = [URL]()
             
             for url in urls! {
                 
-                realUrls.append(url.filePathURL!) // use filePathURL to avoid file:// file id's
+                realUrls.append((url as NSURL).filePathURL!) // use filePathURL to avoid file:// file id's
                 
             }
             
@@ -81,7 +81,7 @@ class DropZoneView: NSView {
     }
     
     /// Returns whether the dragginginfo has any valid files
-    private func hasValidFiles(info: NSDraggingInfo) -> Bool {
+    fileprivate func hasValidFiles(_ info: NSDraggingInfo) -> Bool {
         
         var hasValidFiles = false
         let pboard = info.draggingPasteboard()
@@ -91,7 +91,7 @@ class DropZoneView: NSView {
         
         for url in urls! {
             
-            if contains(acceptedFiles, url.pathExtension!) { hasValidFiles = true }
+            if (acceptedFiles.contains(url.pathExtension)) { hasValidFiles = true }
                 
         }
         
@@ -102,16 +102,16 @@ class DropZoneView: NSView {
     
 //MARK: - Dragging functions
     
-    override func draggingEntered(sender: NSDraggingInfo) -> NSDragOperation {
+    override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
         
-        if dropDelegate != nil && dropDelegate!.respondsToSelector(Selector("draggingEntered:")) {
+        if dropDelegate != nil && dropDelegate!.responds(to: #selector(NSDraggingDestination.draggingEntered(_:))) {
             
             return dropDelegate!.draggingEntered!(sender)
             
         } else {
             
             if !hasValidFiles(sender) {
-                return NSDragOperation.None
+                return NSDragOperation()
             } else {
                 return defaultDragOperation
             }
@@ -120,16 +120,16 @@ class DropZoneView: NSView {
         
     }
     
-    override func draggingUpdated(sender: NSDraggingInfo) -> NSDragOperation {
+    override func draggingUpdated(_ sender: NSDraggingInfo) -> NSDragOperation {
         
-        if dropDelegate != nil && dropDelegate!.respondsToSelector(Selector("draggingUpdated:")) {
+        if dropDelegate != nil && dropDelegate!.responds(to: #selector(NSDraggingDestination.draggingUpdated(_:))) {
             
             return dropDelegate!.draggingUpdated!(sender)
             
         } else {
             
             if !hasValidFiles(sender) {
-                return NSDragOperation.None
+                return NSDragOperation()
             } else {
                 return defaultDragOperation
             }
@@ -138,9 +138,9 @@ class DropZoneView: NSView {
         
     }
     
-    override func draggingExited(sender: NSDraggingInfo?) {
+    override func draggingExited(_ sender: NSDraggingInfo?) {
         
-        if dropDelegate != nil && dropDelegate!.respondsToSelector(Selector("draggingExited:")) {
+        if dropDelegate != nil && dropDelegate!.responds(to: #selector(NSDraggingDestination.draggingExited(_:))) {
             
             dropDelegate!.draggingExited!(sender!)
             
@@ -148,9 +148,9 @@ class DropZoneView: NSView {
         
     }
     
-    override func prepareForDragOperation(sender: NSDraggingInfo) -> Bool {
+    override func prepareForDragOperation(_ sender: NSDraggingInfo) -> Bool {
         
-        if dropDelegate != nil && dropDelegate!.respondsToSelector(Selector("prepareForDragOperation:")) {
+        if dropDelegate != nil && dropDelegate!.responds(to: #selector(NSDraggingDestination.prepareForDragOperation(_:))) {
             
             return dropDelegate!.prepareForDragOperation!(sender)
             
@@ -160,9 +160,9 @@ class DropZoneView: NSView {
         
     }
 
-    override func performDragOperation(sender: NSDraggingInfo) -> Bool {
+    override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
         
-        if let del = dropDelegate? {
+        if let del = dropDelegate {
             return dropDelegate!.performDragOperation(sender)
         }
         

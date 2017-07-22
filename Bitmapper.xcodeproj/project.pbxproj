@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35F8416D1F23B00700096B3D /* StringExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F8416C1F23B00700096B3D /* StringExtention.swift */; };
 		FA50383C1AA371DD0090A1F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA50383B1AA371DD0090A1F5 /* AppDelegate.swift */; };
 		FA50383E1AA371DD0090A1F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA50383D1AA371DD0090A1F5 /* ViewController.swift */; };
 		FA5038401AA371DD0090A1F5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA50383F1AA371DD0090A1F5 /* Images.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35F8416C1F23B00700096B3D /* StringExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtention.swift; sourceTree = "<group>"; };
 		FA5038361AA371DD0090A1F5 /* Bitmapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bitmapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA50383A1AA371DD0090A1F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA50383B1AA371DD0090A1F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				FA50383F1AA371DD0090A1F5 /* Images.xcassets */,
 				FA5038411AA371DD0090A1F5 /* Main.storyboard */,
 				FA5038391AA371DD0090A1F5 /* Supporting Files */,
+				35F8416C1F23B00700096B3D /* StringExtention.swift */,
 			);
 			path = Bitmapper;
 			sourceTree = "<group>";
@@ -161,10 +164,12 @@
 				TargetAttributes = {
 					FA5038351AA371DD0090A1F5 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 7P4D6LHV5G;
+						DevelopmentTeam = YYQAE9M783;
+						LastSwiftMigration = 0830;
 					};
 					FA5038471AA371DD0090A1F5 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 0830;
 						TestTargetID = FA5038351AA371DD0090A1F5;
 					};
 				};
@@ -213,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA50383E1AA371DD0090A1F5 /* ViewController.swift in Sources */,
+				35F8416D1F23B00700096B3D /* StringExtention.swift in Sources */,
 				FA5038591AA3763B0090A1F5 /* DropZoneView.swift in Sources */,
 				FA50383C1AA371DD0090A1F5 /* AppDelegate.swift in Sources */,
 			);
@@ -331,10 +337,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YYQAE9M783;
 				INFOPLIST_FILE = Bitmapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -344,10 +352,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YYQAE9M783;
 				INFOPLIST_FILE = Bitmapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -367,6 +377,7 @@
 				INFOPLIST_FILE = BitmapperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bitmapper.app/Contents/MacOS/Bitmapper";
 			};
 			name = Debug;
@@ -383,6 +394,7 @@
 				INFOPLIST_FILE = BitmapperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bitmapper.app/Contents/MacOS/Bitmapper";
 			};
 			name = Release;

@@ -1,1 +1,4 @@
 .DS_Store
+*.app
+Bitmapper.xcodeproj/xcuserdata/*
+Bitmapper.xcodeproj/project.xcworkspace/xcuserdata/*
