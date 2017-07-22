@@ -96,9 +96,9 @@
                     <window key="window" title="Bitmap to C array" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="561" y="417" width="482" height="244"/>
+                        <rect key="contentRect" x="561" y="417" width="480" height="295"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="480" height="295"/>
+                        <value key="minSize" type="size" width="450" height="250"/>
                     </window>
                     <connections>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
@@ -113,21 +113,21 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Bitmapper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="395"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="432"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WFY-9W-P1S">
-                                <rect key="frame" x="20" y="228" width="440" height="147"/>
+                                <rect key="frame" x="20" y="265" width="728" height="147"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="147" id="bIl-GG-jSe"/>
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Kw4-4L-JQ0"/>
                             </imageView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="Pze-la-Y4j" customClass="DropZoneView" customModule="Bitmapper" customModuleProvider="target">
-                                <rect key="frame" x="20" y="228" width="440" height="147"/>
+                                <rect key="frame" x="20" y="265" width="728" height="147"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVN-h4-H8q">
-                                        <rect key="frame" x="67" y="59" width="306" height="28"/>
+                                        <rect key="frame" x="211" y="59" width="306" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="302" id="iwm-d6-hzo"/>
                                             <constraint firstAttribute="height" constant="28" id="j43-CB-8DG"/>
@@ -145,7 +145,7 @@
                                 </constraints>
                             </customView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dSt-yD-tPP">
-                                <rect key="frame" x="14" y="180" width="82" height="32"/>
+                                <rect key="frame" x="14" y="217" width="82" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="r4h-3j-pgV"/>
                                 </constraints>
@@ -158,7 +158,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jev-lc-pJC">
-                                <rect key="frame" x="305" y="180" width="103" height="32"/>
+                                <rect key="frame" x="593" y="217" width="103" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="91" id="AyQ-hC-hVM"/>
                                 </constraints>
@@ -171,17 +171,17 @@
                                 </connections>
                             </button>
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLJ-4q-PJ3">
-                                <rect key="frame" x="20" y="20" width="440" height="147"/>
+                                <rect key="frame" x="20" y="20" width="728" height="184"/>
                                 <clipView key="contentView" id="EGC-q4-tgm">
-                                    <rect key="frame" x="1" y="1" width="423" height="145"/>
+                                    <rect key="frame" x="1" y="1" width="711" height="182"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView importsGraphics="NO" richText="NO" findStyle="bar" allowsUndo="YES" allowsNonContiguousLayout="YES" id="Tyu-aH-0J9">
-                                            <rect key="frame" x="0.0" y="0.0" width="423" height="145"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="711" height="182"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="423" height="145"/>
-                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <size key="minSize" width="711" height="182"/>
+                                            <size key="maxSize" width="1223" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
                                     </subviews>
@@ -192,12 +192,12 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="07T-og-jnN">
-                                    <rect key="frame" x="424" y="1" width="15" height="145"/>
+                                    <rect key="frame" x="712" y="1" width="15" height="182"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                             <comboBox verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fub-XI-qFX">
-                                <rect key="frame" x="246" y="184" width="60" height="26"/>
+                                <rect key="frame" x="534" y="221" width="60" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="IGR-Md-ilY"/>
                                     <constraint firstAttribute="width" constant="57" id="SVH-HJ-n4X"/>
@@ -214,7 +214,7 @@
                                 </comboBoxCell>
                             </comboBox>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeQ-YM-wkA">
-                                <rect key="frame" x="112" y="190" width="128" height="17"/>
+                                <rect key="frame" x="400" y="227" width="128" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="124" id="0Lx-ni-iNv"/>
                                 </constraints>
@@ -225,7 +225,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v7h-r1-246">
-                                <rect key="frame" x="404" y="180" width="62" height="32"/>
+                                <rect key="frame" x="692" y="217" width="62" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="cwh-gj-21Y"/>
                                 </constraints>

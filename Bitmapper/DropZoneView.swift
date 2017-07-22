@@ -83,9 +83,9 @@ class DropZoneView: NSView {
     fileprivate func hasValidFiles(_ info: NSDraggingInfo) -> Bool {
         
         var hasValidFiles = false
-        let pboard = info.draggingPasteboard()
+        //let pboard = info.draggingPasteboard()
         
-        var urls = DropZoneView.fileUrlsFromDraggingInfo(info)
+        let urls = DropZoneView.fileUrlsFromDraggingInfo(info)
         if urls == nil { return false }
         
         for url in urls! {
@@ -161,7 +161,7 @@ class DropZoneView: NSView {
 
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
         
-        if let del = dropDelegate {
+        if dropDelegate != nil {
             return dropDelegate!.performDragOperation(sender)
         }
         
