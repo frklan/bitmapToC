@@ -62,7 +62,6 @@ class DropZoneView: NSView {
         let pboard = info.draggingPasteboard()
         
         if (pboard.types! as NSArray).contains(NSURLPboardType) {
-            
             let urls = pboard.readObjects(forClasses: [NSURL.self], options: nil) as? [NSURL]
             var realUrls = [URL]()
             

@@ -36,6 +36,12 @@ class ViewController: NSViewController, DropZoneDelegate {
         
     }
     
+    override func viewDidDisappear()
+    {
+        exit(0);
+        
+    }
+    
     fileprivate func getImageFromURL(_ url: URL) {
         
         if url.pathExtension == "bmp" {
