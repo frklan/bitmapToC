@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -167,8 +167,8 @@
 				TargetAttributes = {
 					FA5038351AA371DD0090A1F5 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = YYQAE9M783;
 						LastSwiftMigration = 0830;
+						ProvisioningStyle = Manual;
 					};
 					FA5038471AA371DD0090A1F5 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -178,7 +178,7 @@
 				};
 			};
 			buildConfigurationList = FA5038311AA371DD0090A1F5 /* Build configuration list for PBXProject "Bitmapper" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -347,6 +347,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = YYQAE9M783;
@@ -355,6 +356,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.frklan.Bitmapper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -363,6 +365,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = YYQAE9M783;
@@ -371,6 +374,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.frklan.Bitmapper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
