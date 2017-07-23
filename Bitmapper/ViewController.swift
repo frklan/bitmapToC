@@ -36,16 +36,16 @@ class ViewController: NSViewController, DropZoneDelegate {
         textView.font = NSFont(name: "Menlo", size: 11)
         
         let defaults = UserDefaults.standard
-        checkUseProgmem.state = defaults.integer(forKey: "Use Progmem")
-        bitsBox.integerValue = defaults.integer(forKey: "Bits per Pixels")
+        checkUseProgmem.state = defaults.integer(forKey: Constants.USER_DEFAULTS_KEY_USE_PROGMEM)
+        bitsBox.integerValue = defaults.integer(forKey: Constants.USER_DEFAULTS_KEY_BITS_PER_PIXEL)
     }
     
     override func viewWillDisappear()
     {
         let defaults = UserDefaults.standard
       
-        defaults.set(checkUseProgmem.state, forKey: "Use Progmem")
-        defaults.set(bitsBox.integerValue, forKey: "Bits per Pixels")
+        defaults.set(checkUseProgmem.state, forKey: Constants.USER_DEFAULTS_KEY_USE_PROGMEM)
+        defaults.set(bitsBox.integerValue, forKey: Constants.USER_DEFAULTS_KEY_BITS_PER_PIXEL)
         
         // Use this to clear the defaults..
         //UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
